@@ -3,14 +3,14 @@ pipeline{
         label "master"
     }
     environment{
-        secret = ''
+        commitId = ''
     }
     stages{
         stage("Update Git"){
             steps{
                 echo "======== Updating Git========"
                 
-                withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'password', usernameVariable: 'user')]) {
+                withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'pass', usernameVariable: 'user')]) {
                     sh "git config user.email villa@gmail.com"
                     sh "git config user.name villa"
                     sh "cat deployment.yaml"
