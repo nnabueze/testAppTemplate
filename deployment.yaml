@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mathApp
+  name: mathApp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mathApp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: mathApp
+    spec:
+      containers:
+      - image: ngnix
+        name: testApp
+        resources: {}
