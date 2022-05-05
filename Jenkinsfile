@@ -11,7 +11,9 @@ pipeline{
                 echo "======== Updating Git========"
                 
                 withCredentials([string(credentialsId: 'gitHubToken', variable: 'token')]) {
-                    secret = URLEncoder.encode("$token",'UTF-8')
+                    script {
+                        secret = URLEncoder.encode("$token",'UTF-8')
+                    }
                     sh "git config user.email villa@gmail.com"
                     sh "git config user.name villa"
                     sh "cat deployment.yaml"
