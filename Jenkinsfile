@@ -11,7 +11,7 @@ pipeline{
                 echo "======== Updating Git========"
                 
                 withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                    echo 'password: ${pass}'
+                    echo "password: ${pass}"
                     sh "git config user.email villa@gmail.com"
                     sh "git config user.name villa"
                     sh "cat deployment.yaml"
