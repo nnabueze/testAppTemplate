@@ -10,7 +10,7 @@ pipeline{
             steps{
                 echo "======== Updating Git========"
                 
-                withCredentials([string(credentialsId: 'gitHubToken', variable: 'token')]) {
+                withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'password', usernameVariable: 'user')]) {
                     sh "git config user.email villa@gmail.com"
                     sh "git config user.name villa"
                     sh "cat deployment.yaml"
@@ -18,7 +18,7 @@ pipeline{
                     sh "cat deployment.yaml"
                     sh "git add ."
                     sh "git commit -am 'Triggered Build: ${env.BUILD_NUMBER}'"
-                    sh "git push https://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@github.com/nnabueze/testAppTemplate.git HEAD:master"
+                    sh "git push https://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@github.com/${user}/testAppTemplate.git HEAD:master"
                 }
             }
         }
