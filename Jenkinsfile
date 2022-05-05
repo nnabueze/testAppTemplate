@@ -18,7 +18,7 @@ pipeline{
                     sh "cat deployment.yaml"
                     sh "git add ."
                     sh "git commit -am 'Triggered Build: ${env.BUILD_NUMBER}'"
-                    sh "git push https://${pass}@github.com/${user}/testAppTemplate.git HEAD:master"
+                    sh "git push https://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@github.com/${user}/testAppTemplate.git HEAD:master"
                 }
             }
         }
