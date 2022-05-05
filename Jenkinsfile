@@ -18,7 +18,7 @@ pipeline{
                     sh "sed -i 's+villavelle101/maths.*+villavelle101/maths:${params.DOCKERTAG}+g' deployment.yaml"
                     sh "cat deployment.yaml"
                     sh "git add ."
-                    sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
+                    sh "git commit -am 'Triggered Build: ${env.BUILD_NUMBER}'"
                     sh "git branch"
                     sh "git push https://${gitHubUsername}:${gitHubToken}@github.com/${gitHubUsername}/testAppTemplate.git"
                 }
