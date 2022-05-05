@@ -6,6 +6,7 @@ pipeline{
         stage("Update Git"){
             steps{
                 echo "======== Updating Git========"
+                
                 withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'gitHubToken', 
                 usernameVariable: 'gitHubUsername')]) {
                     sh "git config user.email villa@gmail.com"
@@ -15,7 +16,8 @@ pipeline{
                     sh "cat deployment.yaml"
                     sh "git add ."
                     sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
-                    sh "git push https://${gitHubUsername}:${gitHubToken}@github.com/${gitHubUsername}/testAppTemplate.git"
+                    def commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
+                    sh "git push https://${gitHubUsername}:${gitHubToken}@github.com/${gitHubUsername}/testAppTemplate.git HEAD:${commitId}"
                 }
             }
         }
