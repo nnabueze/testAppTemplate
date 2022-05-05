@@ -19,7 +19,6 @@ pipeline{
                     sh "cat deployment.yaml"
                     sh "git add ."
                     sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
-                    commitId = sh(returnStdout: true, script: 'git rev-parse HEAD')
                     sh "git push https://${gitHubUsername}:${gitHubToken}@github.com/${gitHubUsername}/testAppTemplate.git HEAD:${commitId}"
                 }
             }
