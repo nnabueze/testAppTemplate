@@ -16,6 +16,6 @@ spec:
         app: mathApp
     spec:
       containers:
-      - image: villavelle101/maths:25
+      - image: villavelle101/maths:null
         name: testApp
         resources: {}
