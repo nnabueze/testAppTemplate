@@ -9,8 +9,9 @@ pipeline{
         stage("Update Git"){
             steps{
                 echo "======== Updating Git========"
-                
-                withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'GITHUB_ACCESS_TOKEN', usernameVariable: 'user')]) {
+
+                withCredentials([usernamePassword(credentialsId: 'jenkins-app', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USER')]) {
+                    // some block
                     sh "git config user.email villa@gmail.com"
                     sh "git config user.name villa"
                     sh "cat deployment.yaml"
@@ -18,7 +19,7 @@ pipeline{
                     sh "cat deployment.yaml"
                     sh "git add ."
                     sh "git commit -am 'Triggered Build: ${env.BUILD_NUMBER}'"
-                    sh 'git push https://${user}:${GITHUB_ACCESS_TOKEN}@github.com/${user}/testAppTemplate.git HEAD:master'
+                    sh 'git push https://${GIT_USER}:${GIT_PASSWORD}@github.com/${GIT_USER}/testAppTemplate.git HEAD:master'
                 }
             }
         }
