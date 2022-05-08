@@ -6,7 +6,7 @@ pipeline{
         commitId = ''
     }
     stages{
-        stage("Update Git"){
+        stage("Trigger Update Git"){
             steps{
                 echo "======== Updating Git========"
 
