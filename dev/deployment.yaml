@@ -5,7 +5,7 @@ metadata:
     app: math-app
   name: math-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: math-app
@@ -17,5 +17,5 @@ spec:
     spec:
       containers:
       - image: villavelle101/maths:29
-        name: testApp
+        name: test-app
         resources: {}
