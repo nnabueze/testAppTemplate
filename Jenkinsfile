@@ -2,9 +2,6 @@ pipeline{
     agent{
         label "master"
     }
-    environment{
-        commitId = ''
-    }
     stages{
         stage("Trigger Update Git"){
             steps{

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appDeploy
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/nnabueze/testAppTemplate.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
