@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mathApp
-  name: mathApp
+    app: math-app
+  name: math-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mathApp
+      app: math-app
   strategy: {}
   template:
     metadata:
       labels:
-        app: mathApp
+        app: math-app
     spec:
       containers:
       - image: villavelle101/maths:29
