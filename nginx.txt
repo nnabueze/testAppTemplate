@@ -1,0 +1,47 @@
+- app_version: 2.2.0
+  description: NGINX Ingress Controller
+  url: https://artifacthub.io/packages/helm/nginx/nginx-ingress
+  version: 0.13.0
+- app_version: 2.2.0
+  description: NGINX Ingress Controller
+  url: https://artifacthub.io/packages/helm/nginx-edge/nginx-ingress
+  version: 0.0.0-edge
+- app_version: v0.34.1
+  description: An nginx Ingress controller that uses ConfigMap to store the nginx
+    configuration.
+  url: https://artifacthub.io/packages/helm/okteto/nginx-ingress
+  version: 1.41.2
+- app_version: 0.24.1
+  description: An nginx Ingress controller that uses ConfigMap to store the nginx
+    configuration.
+  url: https://artifacthub.io/packages/helm/cloudnativeapp/nginx-ingress
+  version: 1.6.11
+- app_version: 0.14.0
+  description: An nginx Ingress controller that uses ConfigMap to store the nginx
+    configuration.
+  url: https://artifacthub.io/packages/helm/jenkins-x/nginx-ingress
+  version: 0.21.1
+- app_version: 0.29.0
+  description: An nginx Ingress controller that uses ConfigMap to store the nginx
+    configuration.
+  url: https://artifacthub.io/packages/helm/hkube/nginx-ingress
+  version: 1.31.1002
+- app_version: 0.10.2
+  description: An nginx Ingress controller that uses ConfigMap to store the nginx
+    configuration.
+  url: https://artifacthub.io/packages/helm/zrepo-test/nginx-ingress
+  version: 0.9.5
+- app_version: ""
+  description: A Helm chart for Nginx Ingress
+  url: https://artifacthub.io/packages/helm/cloudposse/nginx-ingress
+  version: 0.1.8
+- app_version: ""
+  description: A Helm chart for nginx-default-backend to be used by nginx-ingress
+    controller
+  url: https://artifacthub.io/packages/helm/cloudposse/nginx-default-backend
+  version: 0.5.0
+- app_version: ""
+  description: A Helm chart that provides a maintenance backend to be used by nginx-ingress
+    controller
+  url: https://artifacthub.io/packages/helm/cloudposse/fail-whale
+  version: 0.1.1
